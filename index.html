@@ -149,6 +149,8 @@ a{color:inherit;}
 .card .meta .row{display:flex; align-items:center; gap:7px;}
 .card .meta svg{flex-shrink:0; color:var(--fg-muted);}
 .card .desc{margin-top:14px; font-family:"Shippori Mincho",serif; font-size:.96rem; line-height:1.9;}
+.card .desc a{color:var(--accent); text-decoration:underline; text-underline-offset:2px;}
+.card .foot .text-link{font-family:"JetBrains Mono",monospace; font-size:.78rem; font-weight:700; color:var(--accent); text-decoration:none; border-bottom:2px solid var(--accent);}
 .card .foot{margin-top:20px; display:flex; justify-content:space-between; align-items:center;}
 .card .toast{font-size:.78rem; color:var(--fg-muted); font-family:"JetBrains Mono",monospace;}
 .more-btn{
@@ -369,40 +371,41 @@ var ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke=
 // newest first
 var SHOWS = [
   {
-    no: "06", jp: "滅びの美 伍ノ廃", en: "Beyond Decay",
-    date: "2026.09", place: "",
-    desc: "廃墟をテーマにした展示会「滅びの美」の第5回目。滅びの先にある世界を展示・動画・グッズで表現しました。",
+    no: "06", jp: "滅びの美 伍ノ廃", en: "",
+    date: "2026.09", place: "東京都神保町 Gallery CORSO",
+    desc: "廃墟をテーマにした展示会「滅びの美」の第5回目。滅びの先にある世界を展示・動画・グッズで表現。",
     img: "images/f3179c8d0abe796ca051f5c833e3b20c.jpg", fit: "contain",
     link: "https://n-ume.github.io/horobi-5/"
   },
   {
     no: "05", jp: "AI FUSION FES", en: "AI FUSION FES 2026",
-    date: "2026.07", place: "",
-    desc: "AIイラスト・動画・音楽の融合するイベントAI FUSION FESへ、新しい手法で制作した作品を出展。",
-    img: "images/9191c625234b2434ea1a451d52dec427.jpg", fit: "contain"
+    date: "2026.07", place: "東京都渋谷区 R Lounge",
+    desc: "AIイラスト・動画・音楽の融合するイベントAI FUSION FESへ、新しい手法で制作した作品を出展。<a href=\"https://note.com/aicu/n/n8d6c59874381\" target=\"_blank\" rel=\"noopener\">AICU様による記事</a>",
+    img: "images/9191c625234b2434ea1a451d52dec427.jpg", fit: "contain",
+    link: "https://tosu-designer.com/ai-fusion/", linkLabel: "公式ページ"
   },
   {
     no: "04", jp: "コワイイ展", en: "KOWAII Exhibition",
-    date: "2025.11.15 – 11.16", place: "東京都新宿区下落合 BaBaBa（高田馬場）",
+    date: "2025.11", place: "東京都新宿区下落合 BaBaBa（高田馬場）",
     desc: "“美しさ”と“怖さ”、相反する感情が重なり合う瞬間をテーマにしたAIアート展に出展。",
     img: "images/b736bde904e71b712cf637970d550b91.jpg", fit: "contain"
   },
   {
-    no: "03", jp: "Nコレ京都", en: "N Collection Kyoto",
-    date: "2025.11", place: "京都",
-    desc: "廃墟と生花を重ねた作品シリーズを出展。",
+    no: "03", jp: "Nコレ京都 2025", en: "NEXT ARTEC COLLECTION KYOTO 2025",
+    date: "2025.11", place: "京都府",
+    desc: "素材感の素敵なキャンバスに、都市と花をミックスした作品を出展。",
     img: "images/e778aa42987e1177e60cec8b81522413.jpg", fit: "contain"
   },
   {
     no: "02", jp: "廃墟カフェ RUINS 展示", en: "Ruins Cafe Exhibition",
-    date: "2025.03 – 05", place: "兵庫県三田市",
-    desc: "廃墟をテーマにしたカフェ空間に、渋谷の廃墟化を描いたAI作品を常設展示。",
+    date: "2025.03 – 05", place: "兵庫県三田市 廃墟カフェRUINS",
+    desc: "実際の廃墟をリノベーションしたカフェに、空想都市を中心とした作品を常設展示。",
     img: "images/658365e5d2497a5799ce284db77e96ed.jpg", fit: "contain"
   },
   {
-    no: "01", jp: "滅びの美 肆ノ廃", en: "Beyond Decay — Vol.4",
-    date: "2024.04.28 – 05.05", place: "神保町ギャラリーCORSO",
-    desc: "“廃墟猫”として出展した、日本初のAI廃墟作品個展。シリーズの出発点。",
+    no: "01", jp: "滅びの美 肆ノ廃", en: "",
+    date: "2024.04-05", place: "東京都神保町 Gallery CORSO",
+    desc: "AI廃墟初の展示会出展で、生成AIの可能性を提示。”廃墟猫”として出展。",
     img: "images/7fb8d983d52aeac227864fa58f0b033e.jpg", fit: "contain"
   }
 ];
@@ -434,14 +437,17 @@ SHOWS.forEach(function(s){
     '<figure><img class="' + (s.fit === "contain" ? "contain" : "") + '" src="' + s.img + '" alt="' + s.jp + '" loading="lazy"></figure>' +
     '<div class="no"><span class="ghost">' + s.no + '</span><span class="lb">Exhibition</span></div>' +
     '<h3>' + s.jp + '</h3>' +
-    '<div class="en">' + s.en + '</div>' +
+    (s.en ? '<div class="en">' + s.en + '</div>' : '') +
     '<div class="meta">' +
       (s.place ? '<div class="row">' + PIN + '<span>' + s.place + '</span></div>' : '') +
       '<div class="row">' + CAL + '<span>' + s.date + '</span></div>' +
     '</div>' +
     '<p class="desc">' + s.desc + '</p>' +
     (s.link
-      ? '<div class="foot"><a class="more-btn active" href="' + s.link + '" target="_blank" rel="noopener" aria-label="特設ページを見る">' + ARROW + '</a></div>'
+      ? '<div class="foot">' + (s.linkLabel
+          ? '<a class="text-link" href="' + s.link + '" target="_blank" rel="noopener">' + s.linkLabel + ' →</a>'
+          : '<a class="more-btn active" href="' + s.link + '" target="_blank" rel="noopener" aria-label="特設ページを見る">' + ARROW + '</a>')
+        + '</div>'
       : '');
   main.appendChild(el);
 });
