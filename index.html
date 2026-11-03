@@ -162,6 +162,17 @@ a{color:inherit;}
 .more-btn.active{border-color:var(--accent); color:var(--accent);}
 .more-btn.active:hover{background:var(--accent); color:#fff; transform:translateX(3px);}
 
+/* ---- Real Urbex (second account) ---- */
+.urbex-intro{margin-top:28px; max-width:720px;}
+.urbex-intro p{font-family:"Shippori Mincho",serif; font-size:.96rem; line-height:1.95; color:var(--fg);}
+.urbex-intro .urbex-follow{display:inline-block; margin-top:6px; font-family:"JetBrains Mono",monospace; font-size:.82rem; font-weight:700; color:var(--accent); text-decoration:none; border-bottom:2px solid var(--accent);}
+.urbex-grid{margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+.urbex-grid a{display:block; line-height:0;}
+.urbex-grid img{width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:var(--surface); transition:opacity .15s ease;}
+.urbex-grid a:hover img{opacity:.85;}
+@media (max-width:860px){.urbex-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:480px){.urbex-grid{gap:10px;}}
+
 footer{
   border-top:1px solid var(--line); padding-block:48px 64px; margin-top:20px;
   display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;
@@ -200,7 +211,7 @@ footer .links a.icon-link svg{width:19px; height:19px; fill:currentColor;}
 </style>
 
 <div class="hero-banner">
-  <img src="images/e1cf264e1f29d86df9fe9afe85130d48.jpg" alt="水没した都市に残る廃墟タワー">
+  <img src="images/e1cf264e1f29d86df9fe9afe85130d48.webp" alt="水没した都市に残る廃墟タワー">
 </div>
 
 <div class="wrap">
@@ -299,14 +310,14 @@ footer .links a.icon-link svg{width:19px; height:19px; fill:currentColor;}
   </section>
   <div class="press-block">
     <div class="press-item">
-      <img class="press-img" src="images/554d47ed55ccac74a7ceb029a5222fcb.jpg" alt="DOMMUNE出演" loading="lazy">
+      <img class="press-img" src="images/554d47ed55ccac74a7ceb029a5222fcb.webp" alt="DOMMUNE出演" loading="lazy">
       <div class="press-date">2024.09</div>
       <h3>DOMMUNE出演</h3>
       <p class="press-desc">東京キララ社 Presents「AI廃墟写真集 Ruin's Cat」出版記念〜表現に於ける生成AIの可能性 2024。宇川直宏さんを交えて対談し、現実の廃墟との棲み分けや、AIを使った表現の可能性について議論しました。</p>
       <a class="press-link" href="https://www.dommune.com/streamings/2024/092002/" target="_blank" rel="noopener"><span class="link-ja">アーカイブを見る</span> →</a>
     </div>
     <div class="press-item">
-      <img class="press-img" src="images/1d777ebdcf785e34859fbff11e31d6ff.jpg" alt="渋谷のラジオ「渋谷のほんだな」出演" loading="lazy">
+      <img class="press-img" src="images/1d777ebdcf785e34859fbff11e31d6ff.webp" alt="渋谷のラジオ「渋谷のほんだな」出演" loading="lazy">
       <div class="press-date">2024.11</div>
       <h3>渋谷のラジオ「渋谷のほんだな」出演</h3>
       <p class="press-desc">ラジオ番組に出演。現役高校生のリスナーから感想文と質問が届くなど、AIネイティブ世代の視点に触れる機会となりました。</p>
@@ -326,23 +337,43 @@ footer .links a.icon-link svg{width:19px; height:19px; fill:currentColor;}
   </section>
   <div class="shop-block">
     <div class="shop-item">
-      <img class="shop-img" src="images/c2b282565e7bc70dcc74e19a0726be00.png" alt="UME STUDIO" loading="lazy">
+      <img class="shop-img" src="images/c2b282565e7bc70dcc74e19a0726be00.webp" alt="UME STUDIO" loading="lazy">
       <h3>UME STUDIO</h3>
-      <p class="shop-desc">展示に出展した額装作品（一点物）を販売しています。</p>
+      <p class="shop-desc">展示に出展した額装作品など、一点物の展示品を販売しています。</p>
       <a class="shop-link" href="https://urbex.base.shop/" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
     </div>
     <div class="shop-item">
-      <img class="shop-img" src="images/9efc76d543d9d19b8bbe67c822a5a263.png" alt="架空都市商店" loading="lazy">
+      <img class="shop-img" src="images/9efc76d543d9d19b8bbe67c822a5a263.webp" alt="架空都市商店" loading="lazy">
       <h3>架空都市商店</h3>
       <p class="shop-desc">アクリルキーホルダーなど、作品モチーフのグッズを販売しています。</p>
       <a class="shop-link" href="https://arturbex.stores.jp/" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
     </div>
     <div class="shop-item">
-      <img class="shop-img" src="images/84c426fc2a3d02659089e357483fa412.png" alt="AI Urbexアパレル" loading="lazy">
+      <img class="shop-img" src="images/84c426fc2a3d02659089e357483fa412.webp" alt="AI Urbexアパレル" loading="lazy">
       <h3>AI Urbexアパレル</h3>
       <p class="shop-desc">Tシャツ・ステッカーなど、オンデマンドグッズを販売しています。</p>
       <a class="shop-link" href="https://suzuri.jp/art_urbex" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
     </div>
+  </div>
+
+  <section class="section-label" id="realurbex">
+    <div class="eyebrow">Another Lens</div>
+    <h2>実踏</h2>
+  </section>
+  <div class="urbex-intro">
+    <p>AIでは架空の世界を創造する一方、現実世界も訪れています。一眼レフ等を利用し、リアルな空気をレンズに収めています。</p>
+    <a class="urbex-follow" href="https://x.com/Real_urbex" target="_blank" rel="noopener">写真アカウント（X:@Real_urbex） →</a>
+  </div>
+  <div class="urbex-grid">
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-taichung-highrise.webp" alt="台中の廃墟ビル" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-vietnam-dragon-park.webp" alt="ベトナムの廃テーマパーク（ドラゴンゲート）" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-windfarm-dusk.webp" alt="夕暮れの風力発電群" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-london-carousel.webp" alt="ロンドンの夜のメリーゴーランド" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-china-soccerball.webp" alt="古びたサッカーボールと街並み" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-london-cemetery.webp" alt="緑に覆われたロンドンの墓地" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-kowloon-skylight.webp" alt="団地の中庭から見上げる菱形の空" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-hongkong-skyline.webp" alt="香港の高層住宅群" loading="lazy"></a>
+    <a href="https://x.com/Real_urbex" target="_blank" rel="noopener"><img src="images/urbex-real-taichung-alley.webp" alt="台中の廃墟路地" loading="lazy"></a>
   </div>
 
   <footer>
@@ -374,39 +405,39 @@ var SHOWS = [
     no: "06", jp: "滅びの美 伍ノ廃", en: "",
     date: "2026.09", place: "東京都神保町 Gallery CORSO",
     desc: "廃墟をテーマにした展示会「滅びの美」の第5回目。滅びの先にある世界を展示・動画・グッズで表現。",
-    img: "images/f3179c8d0abe796ca051f5c833e3b20c.jpg", fit: "contain",
+    img: "images/f3179c8d0abe796ca051f5c833e3b20c.webp", fit: "contain",
     link: "https://n-ume.github.io/horobi-5/"
   },
   {
     no: "05", jp: "AI FUSION FES", en: "AI FUSION FES 2026",
     date: "2026.07", place: "東京都渋谷区 R Lounge",
     desc: "AIイラスト・動画・音楽の融合するイベントAI FUSION FESへ、新しい手法で制作した作品を出展。<a href=\"https://note.com/aicu/n/n8d6c59874381\" target=\"_blank\" rel=\"noopener\">AICU様による記事</a>",
-    img: "images/9191c625234b2434ea1a451d52dec427.jpg", fit: "contain",
+    img: "images/9191c625234b2434ea1a451d52dec427.webp", fit: "contain",
     link: "https://tosu-designer.com/ai-fusion/", linkLabel: "公式ページ"
   },
   {
     no: "04", jp: "コワイイ展", en: "KOWAII Exhibition",
     date: "2025.11", place: "東京都新宿区下落合 BaBaBa（高田馬場）",
     desc: "“美しさ”と“怖さ”、相反する感情が重なり合う瞬間をテーマにしたAIアート展に出展。",
-    img: "images/b736bde904e71b712cf637970d550b91.jpg", fit: "contain"
+    img: "images/b736bde904e71b712cf637970d550b91.webp", fit: "contain"
   },
   {
     no: "03", jp: "Nコレ京都 2025", en: "NEXT ARTEC COLLECTION KYOTO 2025",
     date: "2025.11", place: "京都府",
     desc: "素材感の素敵なキャンバスに、都市と花をミックスした作品を出展。",
-    img: "images/e778aa42987e1177e60cec8b81522413.jpg", fit: "contain"
+    img: "images/e778aa42987e1177e60cec8b81522413.webp", fit: "contain"
   },
   {
     no: "02", jp: "廃墟カフェ RUINS 展示", en: "Ruins Cafe Exhibition",
     date: "2025.03 – 05", place: "兵庫県三田市 廃墟カフェRUINS",
     desc: "実際の廃墟をリノベーションしたカフェに、空想都市を中心とした作品を常設展示。",
-    img: "images/658365e5d2497a5799ce284db77e96ed.jpg", fit: "contain"
+    img: "images/658365e5d2497a5799ce284db77e96ed.webp", fit: "contain"
   },
   {
     no: "01", jp: "滅びの美 肆ノ廃", en: "",
     date: "2024.04-05", place: "東京都神保町 Gallery CORSO",
     desc: "AI廃墟初の展示会出展で、生成AIの可能性を提示。”廃墟猫”として出展。",
-    img: "images/7fb8d983d52aeac227864fa58f0b033e.jpg", fit: "contain"
+    img: "images/7fb8d983d52aeac227864fa58f0b033e.webp", fit: "contain"
   }
 ];
 
