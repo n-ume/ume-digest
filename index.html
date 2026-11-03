@@ -1,0 +1,445 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>THE UME DIGEST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+Display:wght@700;900&family=Shippori+Mincho:wght@400;500;700&family=Playfair+Display:wght@900&family=Zen+Old+Mincho:wght@400;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* layout: 2-col editorial grid (Kaikai Kiki /exhibitions/ structure) — big image, title, pin+location, calendar+date, circular arrow button, hairline divider — rebuilt bolder in UME's own white/black/magenta brand */
+:root{
+  --bg:#f6ece0;
+  --surface:#efe1cf;
+  --fg:#1c1712;
+  --fg-muted:#726757;
+  --accent:#c21e5f;
+  --line:#ddccb3;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Zen Kaku Gothic New",sans-serif;
+}
+h1,h2,h3{text-wrap:balance; margin:0; font-weight:900;}
+a{color:inherit;}
+
+.wrap{max-width:1180px; margin-inline:auto; padding-inline:24px;}
+
+/* ---- full-bleed hero banner ---- */
+.hero-banner{width:100%; aspect-ratio:16/5; max-height:310px; overflow:hidden;}
+.hero-banner img{width:100%; height:100%; display:block; object-fit:cover; object-position:center 38%;}
+@media (max-width:620px){
+  .hero-banner{aspect-ratio:8/5; max-height:260px;}
+}
+
+/* ---- header: newspaper masthead ---- */
+.topbar{
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+  padding-block:30px 24px; border-top:3px double var(--fg); border-bottom:3px double var(--fg);
+}
+.topbar .kicker{font-family:"JetBrains Mono",monospace; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--fg-muted);}
+.logo{font-family:"Playfair Display",serif; font-size:clamp(1.9rem,5.5vw,2.8rem); font-weight:900; letter-spacing:.02em; color:var(--fg);}
+.nav{display:flex; gap:22px; flex-wrap:wrap; justify-content:center; font-size:.82rem; font-weight:500; margin-top:2px;}
+.nav a{text-decoration:none; border-bottom:2px solid transparent;}
+.nav a:hover{border-color:var(--accent);}
+
+/* ---- hero ---- */
+.hero{
+  padding-block:72px 64px; border-bottom:1px solid var(--line);
+  display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:end;
+}
+.hero h1{font-family:"Noto Serif Display",serif; font-size:clamp(2.4rem,6vw,4rem); line-height:.95; color:color-mix(in srgb, var(--fg) 72%, white 28%);}
+.hero .role{margin-top:16px; font-size:1.1rem; font-weight:700; color:var(--accent);}
+.hero .real-name{margin-top:6px; font-size:.78rem; font-family:"JetBrains Mono",monospace; color:var(--fg-muted); letter-spacing:.02em;}
+.hero p{margin-top:22px; font-family:"Shippori Mincho",serif; font-size:1.05rem; color:var(--fg-muted); line-height:1.95;}
+.hero p.hero-note{margin-top:12px; font-size:.78rem; line-height:1.8;}
+.hero .stat{text-align:right;}
+.hero .stat .n{font-family:"JetBrains Mono",monospace; font-size:clamp(3.6rem,9vw,6.4rem); font-weight:700; line-height:1; font-variant-numeric:tabular-nums;}
+.hero .stat .label{font-family:"JetBrains Mono",monospace; font-size:clamp(1.9rem,5.2vw,3.4rem); font-weight:700; line-height:1.05; letter-spacing:.04em; text-transform:uppercase; color:var(--fg-muted);}
+
+/* ---- upcoming ---- */
+.upcoming{padding-block:22px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+.upcoming .tag{font-family:"JetBrains Mono",monospace; font-size:.72rem; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--accent); padding:4px 10px;}
+.upcoming .body{font-size:1.02rem; font-weight:700;}
+.upcoming .body span{margin-left:10px; font-weight:400; color:var(--fg-muted); font-family:"JetBrains Mono",monospace; font-size:.84rem;}
+
+.section-label{padding-top:64px; padding-bottom:8px;}
+.section-label .eyebrow{font-family:"JetBrains Mono",monospace; font-size:.76rem; letter-spacing:.12em; color:var(--fg-muted);}
+.section-label h2{font-family:"Zen Old Mincho",serif; font-weight:900; font-size:2rem; margin-top:8px;}
+
+/* ---- narrative sections (origin / statement) — structure only, copy pending ---- */
+.chapters{margin-top:28px; display:flex; flex-direction:column;}
+.chapter{display:flex; gap:24px; padding-block:28px; border-top:1px solid var(--line); align-items:flex-start;}
+.chapter-no{font-family:"Zen Old Mincho",serif; font-weight:900; font-size:2.2rem; color:color-mix(in srgb, var(--accent) 15%, transparent); flex-shrink:0; width:60px; text-align:center; line-height:1;}
+.chapter-body{flex:1;}
+.chapter-head-row{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+.chapter-date{font-family:"JetBrains Mono",monospace; font-size:.74rem; color:var(--fg-muted); flex-shrink:0;}
+.chapter-body h3{font-size:1.3rem;}
+.placeholder{margin-top:10px; font-family:"Shippori Mincho",serif; font-size:.92rem; font-style:italic; color:var(--fg-muted);}
+.toggle-content{margin-top:14px; font-family:"Shippori Mincho",serif; font-size:.96rem; line-height:1.95; color:var(--fg);}
+.toggle-content p{margin:0 0 1.1em;}
+.toggle-content p:last-child{margin-bottom:0;}
+.toggle-content strong{font-weight:700; color:var(--accent);}
+.toggle-content a{color:var(--accent); text-decoration:underline; text-underline-offset:2px;}
+
+/* 閉じている間は冒頭3行だけ見せ、下端を白くフェードさせる（続きがあると分かるプレビュー） */
+.toggle-content, .placeholder{
+  position:relative; max-height:5.9em; overflow:hidden; transition:max-height .35s ease;
+}
+.toggle-content::after, .placeholder::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2em;
+  background:linear-gradient(to bottom, color-mix(in srgb, var(--bg) 8%, transparent), color-mix(in srgb, var(--bg) 70%, transparent) 55%, var(--bg) 95%);
+  transition:opacity .25s ease; pointer-events:none;
+}
+.toggle-content.open, .placeholder.open{max-height:1400px;}
+.toggle-content.open::after, .placeholder.open::after{opacity:0;}
+.statement-block{margin-top:28px; padding-block:28px; border-top:1px solid var(--line);}
+
+/* ---- 開閉トグル：丸バッジ(＋/－)＋ラベルのセットボタン ---- */
+.chapter-head{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+.chapter-toggle{all:unset; display:inline-flex; align-items:center; gap:9px; cursor:pointer; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:6px 16px 6px 8px; flex-shrink:0; transition:border-color .15s ease;}
+.chapter-toggle:hover{border-color:var(--accent);}
+.chapter-toggle .badge{display:inline-flex; align-items:center; justify-content:center; color:var(--accent); font-weight:700; font-size:1.05rem; line-height:1; flex-shrink:0;}
+.chapter-toggle .toggle-label{font-size:.82rem; font-weight:700;}
+.statement-block .chapter-toggle{margin-top:4px;}
+.press-block{margin-top:28px; display:flex; flex-direction:column;}
+.press-item{padding-block:28px; border-top:1px solid var(--line);}
+.press-item .press-date{font-family:"JetBrains Mono",monospace; font-size:.74rem; font-weight:700; color:var(--accent); letter-spacing:.08em;}
+.press-item h3{font-size:1.25rem; margin-top:8px;}
+.press-item .press-desc{margin-top:12px; font-family:"Shippori Mincho",serif; font-size:.94rem; line-height:1.85; color:var(--fg);}
+.press-item .press-link{display:inline-block; margin-top:14px; font-family:"JetBrains Mono",monospace; font-size:.8rem; font-weight:700; color:var(--accent); text-decoration:none; border-bottom:2px solid var(--accent);}
+.press-item .press-link .link-ja, .shop-item .shop-link .link-ja{font-family:"Shippori Mincho",serif; font-weight:700;}
+.press-item .press-img{width:100%; max-width:420px; display:block; aspect-ratio:16/9; object-fit:cover; background:var(--surface); margin-bottom:18px;}
+
+/* ---- Shop ---- */
+.shop-block{margin-top:28px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.shop-item{padding:26px; border:1px solid var(--line); border-radius:12px;}
+.shop-item .shop-img{width:100%; display:block; aspect-ratio:4/3; object-fit:cover; background:var(--surface); margin-bottom:16px;}
+.shop-item h3{font-size:1.1rem;}
+.shop-item .shop-desc{margin-top:10px; font-family:"Shippori Mincho",serif; font-size:.88rem; line-height:1.8; color:var(--fg-muted);}
+.shop-item .shop-link{display:inline-block; margin-top:14px; font-family:"JetBrains Mono",monospace; font-size:.78rem; font-weight:700; color:var(--accent); text-decoration:none; border-bottom:2px solid var(--accent);}
+@media (max-width:860px){.shop-block{grid-template-columns:1fr;}}
+.toggle-content + .chapter-toggle, .placeholder + .chapter-toggle{margin-top:6px;}
+
+/* ---- exhibition grid (Kaikai Kiki structure) ---- */
+.grid{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  column-gap:28px;
+}
+.card{padding-block:34px; border-top:1px solid var(--line);}
+.card figure{margin:0;}
+.card img{
+  width:100%; display:block; aspect-ratio:5/4; object-fit:cover; background:var(--surface);
+}
+.card img.contain{object-fit:contain;}
+.card .no{position:relative; margin-top:18px; padding-top:14px;}
+.card .no .ghost{font-family:"Zen Old Mincho",serif; font-weight:900; font-size:3rem; color:color-mix(in srgb, var(--accent) 15%, transparent); position:absolute; left:-4px; top:-14px; line-height:1; z-index:0;}
+.card .no .lb{position:relative; z-index:1; font-family:"JetBrains Mono",monospace; font-size:.68rem; letter-spacing:.12em; color:var(--fg-muted); text-transform:uppercase; margin-left:42px;}
+.card h3{font-family:"Shippori Mincho",serif; font-weight:700; font-size:1.5rem; margin-top:8px; line-height:1.3;}
+.card .en{margin-top:4px; font-family:"PT Serif",serif; font-style:italic; font-size:.92rem; font-weight:400; color:var(--fg-muted);}
+.card .meta{margin-top:16px; display:flex; flex-direction:column; gap:7px; font-family:"Shippori Mincho",serif; font-size:.84rem; color:var(--fg-muted);}
+.card .meta .row{display:flex; align-items:center; gap:7px;}
+.card .meta svg{flex-shrink:0; color:var(--fg-muted);}
+.card .desc{margin-top:14px; font-family:"Shippori Mincho",serif; font-size:.96rem; line-height:1.9;}
+.card .foot{margin-top:20px; display:flex; justify-content:space-between; align-items:center;}
+.card .toast{font-size:.78rem; color:var(--fg-muted); font-family:"JetBrains Mono",monospace;}
+.more-btn{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+  background:none; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--fg-muted);
+  flex-shrink:0; transition:border-color .15s ease, color .15s ease, transform .15s ease, background .15s ease;
+  text-decoration:none;
+}
+.more-btn.active{border-color:var(--accent); color:var(--accent);}
+.more-btn.active:hover{background:var(--accent); color:#fff; transform:translateX(3px);}
+
+footer{
+  border-top:1px solid var(--line); padding-block:48px 64px; margin-top:20px;
+  display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;
+}
+footer .eyebrow{font-family:"JetBrains Mono",monospace; font-size:.75rem; letter-spacing:.1em; color:var(--fg-muted); margin-bottom:10px;}
+footer p{font-family:"Shippori Mincho",serif; font-size:.96rem; color:var(--fg-muted); line-height:1.9;}
+footer .links{display:flex; gap:22px; flex-wrap:wrap; align-items:center; font-family:"JetBrains Mono",monospace; font-size:.82rem; font-weight:700;}
+footer .links a{text-decoration:none; border-bottom:2px solid var(--accent);}
+footer .links a.icon-link{display:inline-flex; align-items:center; border-bottom:none; line-height:1;}
+footer .links a.icon-link svg{width:19px; height:19px; fill:currentColor;}
+
+@media (max-width:1000px){
+  .grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr; gap:28px;}
+  .hero .stat{text-align:left;}
+  .grid{grid-template-columns:1fr;}
+}
+.to-top{
+  position:fixed; right:24px; bottom:24px; z-index:40;
+  display:flex; align-items:center; justify-content:center;
+  width:42px; height:42px; background:var(--bg); border:1px solid var(--line); border-radius:50%; cursor:pointer;
+  opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s ease, transform .25s ease, border-color .15s ease, color .15s ease;
+}
+.to-top.show{opacity:1; transform:translateY(0); pointer-events:auto;}
+.to-top:hover{border-color:var(--accent); color:var(--accent);}
+.to-top .arrow{font-family:"Zen Old Mincho",serif; font-size:1.15rem; line-height:1; color:inherit;}
+@media (max-width:480px){
+  .to-top{right:16px; bottom:16px; width:38px; height:38px;}
+  .hero{padding-block:48px 40px;}
+  .section-label{padding-top:48px;}
+  .card{padding-block:28px;}
+  .chapter{flex-direction:column; gap:8px;}
+}
+</style>
+
+<div class="hero-banner">
+  <img src="images/e1cf264e1f29d86df9fe9afe85130d48.jpg" alt="水没した都市に残る廃墟タワー">
+</div>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="logo">THE UME DIGEST</div>
+    <nav class="nav">
+      <a href="#origin">契機</a>
+      <a href="#thoughts">理念</a>
+      <a href="#shows">軌跡</a>
+      <a href="#press">メディア</a>
+      <a href="#shop">購入</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>UME</h1>
+      <div class="role">AI Urbex Artist</div>
+      <div class="real-name">Naoki Umegatani</div>
+      <p>生成AIで"誰もいない架空の都市"を創造し、感性を自由にできる場所を作るとともに、AIと現実世界の接続をテーマに、作品展示を行っています。</p>
+      <p class="hero-note">*本ページの文章は一切生成AIを利用せず、全文に魂を込めて記述しています。誤った用語や文法などがあるかもしれませんが、人間味としてお楽しみください。</p>
+    </div>
+    <div class="stat">
+      <div class="label">SINCE 2023</div>
+    </div>
+  </header>
+
+  <section class="section-label" id="origin">
+    <div class="eyebrow">Origin</div>
+    <h2>契機</h2>
+  </section>
+  <section class="chapters">
+    <div class="chapter">
+      <div class="chapter-no">01</div>
+      <div class="chapter-body">
+        <div class="chapter-head-row">
+          <h3>なぜAIで作品を作り始めたのか</h3>
+        </div>
+        <div class="toggle-content">
+          <p>私が本格的に画像生成AIを使いはじめたのは2023年8月、生成AIを活用し、退廃した世界の画像をXに投稿し始めました。なぜAIで退廃した世界をつくりはじめたか、理由は2つありました。</p>
+          <p><strong>① AI活用の機運</strong><br>日頃、ITの領域で仕事をしていることもあり、新しいテクノロジーは先ず触るというカルチャーの中で暮らしてきました。当時、画像生成AIはまだまだ発展途上でしたが、数か月おきに画質が大きく改善されている、そんな黎明期真っ只中。このタイミングで何かに利用したいと考え、活用を開始しました。</p>
+          <p><strong>② 人なき世界への偏愛</strong><br>巨大な建築、無機質な柱、どこまでも連なる窓、自然に侵食された建物。上京して、圧倒的な数の建物に惹かれ、写真を撮り始めました。人の姿がない風景のなかで、人工物のスケールと反復に惹かれる。人類の文明の象徴が、朽ちて緑に飲み込まれていく姿に、儚さと美しさを感じる。街を旅し、10年以上好きで続けていた活動を、生成AIで拡張することができると信じ、テーマとしました。</p>
+        </div>
+        <button class="chapter-toggle" type="button" aria-expanded="false">
+          <span class="badge">＋</span><span class="toggle-label">続きを読む</span>
+        </button>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="chapter-no">02</div>
+      <div class="chapter-body">
+        <div class="chapter-head-row">
+          <h3>なぜAIで退廃した世界なのか</h3>
+        </div>
+        <div class="toggle-content">
+          <p>なぜ生成AIで架空の世界を作る必要があるのか？</p>
+          <p>「現実廃墟がハードコア、AI廃墟がサイケデリック」、<a href="https://www.dommune.com/streamings/2024/092002/" target="_blank" rel="noopener">DOMMUNE宇川直宏さんの言葉</a>をお借りすると、こう位置付けられます。元々写真との対比でAI作品の制作を始めたわけでは無いのですが、混同しやすい点なので違いについて触れておきます。</p>
+          <p>写真は、ある時点の対象を切り取り保存するものであり、対象は現実のため確定した歴史と未知の未来があります。一方でAIで制作する世界は、現実には存在しておらず刻まれた歴史や未来の想定はありません。それぞれ全く逆のベクトルであり、そこに唯一の正解はなく双方リスペクトされるべきものです。</p>
+          <p>生成AIによる作品はSFの世界に近く、鑑賞する人が自由に感性を遊ばせることのできるキャンバスです。『もし私がこの世界に飛び込んだら———。この建物の向こう側には何があって、耳を澄ますと何が聞こえてくるのだろう。気温はどんな感じだろうか、香りは漂っているのだろうか』などと、潜り込んでいただきたいのです。</p>
+          <p>答えはない世界、あなた自身の感性に従って自由に好きな世界を思い描く"窓"なのです。</p>
+        </div>
+        <button class="chapter-toggle" type="button" aria-expanded="false">
+          <span class="badge">＋</span><span class="toggle-label">続きを読む</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-label" id="thoughts">
+    <div class="eyebrow">Statement</div>
+    <h2>理念</h2>
+  </section>
+  <div class="statement-block">
+    <div class="toggle-content">
+      <p>なぜ展示に出展するのか？</p>
+      <p>2024年4月、初の展示会出展を行いました。AIの展示ではなく、廃墟展示である『滅びの美 肆ノ廃』です。そこから、AIのみの展示会も含め、ありがたいことに幾度かの展示の機会をいただき出展してきました。</p>
+      <p>展示に出展をすることに対して、人によって様々な想いや目的があると思います。私の場合、『作品を通し、自身の"問い"や"メッセージ"を鑑賞しに来てくれるみなさんへ伝え、コミュニケーションを取りたい』このような強い想いをもとに出展しています。基本的に鑑賞は自由です、好きなように楽しんでいただければ良いものです。</p>
+      <p>生成AIで作品を作っていると、現実空間の貴重さが身に沁みます。SNS投稿など、すべてがデジタルで完結してしまう世界があるからこそ、偶には五感で体感する世界があってもよいのではないでしょうか。対面でことばで会話することでしか得られない気づきがあるのではないでしょうか。</p>
+      <p>すべての出展に、私の想いを込めています。それは現代への問いであったり、メッセージであったり。是非、作品を通して何かを受け取っていただければ幸いです。</p>
+    </div>
+    <button class="chapter-toggle" type="button" aria-expanded="false">
+      <span class="badge">＋</span><span class="toggle-label">続きを読む</span>
+    </button>
+  </div>
+
+  <section class="section-label">
+    <div class="eyebrow">Archive</div>
+    <h2>軌跡</h2>
+  </section>
+
+  <main class="grid" id="shows"></main>
+
+  <section class="section-label" id="press">
+    <div class="eyebrow">Press</div>
+    <h2>メディア</h2>
+  </section>
+  <div class="press-block">
+    <div class="press-item">
+      <img class="press-img" src="images/554d47ed55ccac74a7ceb029a5222fcb.jpg" alt="DOMMUNE出演" loading="lazy">
+      <div class="press-date">2024.09</div>
+      <h3>DOMMUNE出演</h3>
+      <p class="press-desc">東京キララ社 Presents「AI廃墟写真集 Ruin's Cat」出版記念〜表現に於ける生成AIの可能性 2024。宇川直宏さんを交えて対談し、現実の廃墟との棲み分けや、AIを使った表現の可能性について議論しました。</p>
+      <a class="press-link" href="https://www.dommune.com/streamings/2024/092002/" target="_blank" rel="noopener"><span class="link-ja">アーカイブを見る</span> →</a>
+    </div>
+    <div class="press-item">
+      <img class="press-img" src="images/1d777ebdcf785e34859fbff11e31d6ff.jpg" alt="渋谷のラジオ「渋谷のほんだな」出演" loading="lazy">
+      <div class="press-date">2024.11</div>
+      <h3>渋谷のラジオ「渋谷のほんだな」出演</h3>
+      <p class="press-desc">ラジオ番組に出演。現役高校生のリスナーから感想文と質問が届くなど、AIネイティブ世代の視点に触れる機会となりました。</p>
+      <a class="press-link" href="https://note.com/shiburadi/n/n8dc33243764a" target="_blank" rel="noopener"><span class="link-ja">アーカイブを見る</span> →</a>
+    </div>
+    <div class="press-item">
+      <div class="press-date">2024.09</div>
+      <h3>書籍出版「AI廃墟写真集 Ruin's Cat」</h3>
+      <p class="press-desc">AI廃墟の作品集を紙の書籍として出版。AIによる表現がSNSの枠を超えて現実世界に登場したことで、新しい表現の可能性を考える契機となりました。</p>
+      <a class="press-link" href="https://amzn.to/3NO3UdL" target="_blank" rel="noopener"><span class="link-ja">書籍を見る</span> →</a>
+    </div>
+  </div>
+
+  <section class="section-label" id="shop">
+    <div class="eyebrow">Shop</div>
+    <h2>購入</h2>
+  </section>
+  <div class="shop-block">
+    <div class="shop-item">
+      <img class="shop-img" src="images/c2b282565e7bc70dcc74e19a0726be00.png" alt="UME STUDIO" loading="lazy">
+      <h3>UME STUDIO</h3>
+      <p class="shop-desc">展示に出展した額装作品（一点物）を販売しています。</p>
+      <a class="shop-link" href="https://urbex.base.shop/" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
+    </div>
+    <div class="shop-item">
+      <img class="shop-img" src="images/9efc76d543d9d19b8bbe67c822a5a263.png" alt="架空都市商店" loading="lazy">
+      <h3>架空都市商店</h3>
+      <p class="shop-desc">アクリルキーホルダーなど、作品モチーフのグッズを販売しています。</p>
+      <a class="shop-link" href="https://arturbex.stores.jp/" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
+    </div>
+    <div class="shop-item">
+      <img class="shop-img" src="images/84c426fc2a3d02659089e357483fa412.png" alt="AI Urbexアパレル" loading="lazy">
+      <h3>AI Urbexアパレル</h3>
+      <p class="shop-desc">Tシャツ・ステッカーなど、オンデマンドグッズを販売しています。</p>
+      <a class="shop-link" href="https://suzuri.jp/art_urbex" target="_blank" rel="noopener"><span class="link-ja">ショップを見る</span> →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="eyebrow">Contact</div>
+      <p>展示・コラボレーションのご相談はXのDMにて承っています。</p>
+    </div>
+    <div class="links">
+      <a class="icon-link" href="https://x.com/Art_urbex" target="_blank" rel="noopener" aria-label="X (旧Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a class="icon-link" href="https://www.instagram.com/art_dimension_urbex" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://note.com/art_urbex" target="_blank" rel="noopener">NOTE</a>
+      <a href="https://github.com/n-ume" target="_blank" rel="noopener">GITHUB</a>
+    </div>
+  </footer>
+</div>
+
+<button id="to-top" class="to-top" type="button" aria-label="ページ上部へ戻る">
+  <span class="arrow">↑</span>
+</button>
+
+<script>
+var PIN = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+var CAL = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>';
+var ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+// newest first
+var SHOWS = [
+  {
+    no: "06", jp: "滅びの美 伍ノ廃", en: "Beyond Decay — Vol.5",
+    date: "2026.09", place: "",
+    desc: "「滅びの美」シリーズ第5弾。廃墟展の最新作。",
+    img: "images/f3179c8d0abe796ca051f5c833e3b20c.jpg", fit: "contain",
+    link: "https://n-ume.github.io/horobi-5/"
+  },
+  {
+    no: "05", jp: "AI FUSION FES", en: "AI FUSION FES 2026",
+    date: "2026.07", place: "",
+    desc: "AIアートの展示・物販ブースに作品を出展。",
+    img: "images/9191c625234b2434ea1a451d52dec427.jpg", fit: "contain"
+  },
+  {
+    no: "04", jp: "コワイイ展", en: "KOWAII Exhibition",
+    date: "2025.11.15 – 11.16", place: "東京都新宿区下落合 BaBaBa（高田馬場）",
+    desc: "“美しさ”と“怖さ”、相反する感情が重なり合う瞬間をテーマにしたAIアート展に出展。",
+    img: "images/b736bde904e71b712cf637970d550b91.jpg", fit: "contain"
+  },
+  {
+    no: "03", jp: "Nコレ京都", en: "N Collection Kyoto",
+    date: "2025.11", place: "京都",
+    desc: "廃墟と生花を重ねた作品シリーズを出展。",
+    img: "images/e778aa42987e1177e60cec8b81522413.jpg", fit: "contain"
+  },
+  {
+    no: "02", jp: "廃墟カフェ RUINS 展示", en: "Ruins Cafe Exhibition",
+    date: "2025.03 – 05", place: "兵庫県三田市",
+    desc: "廃墟をテーマにしたカフェ空間に、渋谷の廃墟化を描いたAI作品を常設展示。",
+    img: "images/658365e5d2497a5799ce284db77e96ed.jpg", fit: "contain"
+  },
+  {
+    no: "01", jp: "滅びの美 肆ノ廃", en: "Beyond Decay — Vol.4",
+    date: "2024.04.28 – 05.05", place: "神保町ギャラリーCORSO",
+    desc: "“廃墟猫”として出展した、日本初のAI廃墟作品個展。シリーズの出発点。",
+    img: "images/7fb8d983d52aeac227864fa58f0b033e.jpg", fit: "contain"
+  }
+];
+
+// 「きっかけ」「想い」の開閉トグル（バッジ＋ラベル）
+document.querySelectorAll(".chapter-toggle").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    var container = btn.closest(".chapter-body") || btn.closest(".statement-block");
+    var content = container.querySelector(".placeholder, .toggle-content");
+    content.classList.toggle("open", !expanded);
+    btn.querySelector(".badge").textContent = expanded ? "＋" : "－";
+    btn.querySelector(".toggle-label").textContent = expanded ? "続きを読む" : "閉じる";
+  });
+});
+
+var toTop = document.getElementById("to-top");
+function toggleToTop(){ toTop.classList.toggle("show", window.scrollY > 600); }
+window.addEventListener("scroll", toggleToTop, { passive: true });
+toggleToTop();
+toTop.addEventListener("click", function(){ window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+var main = document.getElementById("shows");
+SHOWS.forEach(function(s){
+  var el = document.createElement("div");
+  el.className = "card";
+  el.innerHTML =
+    '<figure><img class="' + (s.fit === "contain" ? "contain" : "") + '" src="' + s.img + '" alt="' + s.jp + '" loading="lazy"></figure>' +
+    '<div class="no"><span class="ghost">' + s.no + '</span><span class="lb">Exhibition</span></div>' +
+    '<h3>' + s.jp + '</h3>' +
+    '<div class="en">' + s.en + '</div>' +
+    '<div class="meta">' +
+      (s.place ? '<div class="row">' + PIN + '<span>' + s.place + '</span></div>' : '') +
+      '<div class="row">' + CAL + '<span>' + s.date + '</span></div>' +
+    '</div>' +
+    '<p class="desc">' + s.desc + '</p>' +
+    (s.link
+      ? '<div class="foot"><a class="more-btn active" href="' + s.link + '" target="_blank" rel="noopener" aria-label="特設ページを見る">' + ARROW + '</a></div>'
+      : '');
+  main.appendChild(el);
+});
+</script>
+
+</body></html>
